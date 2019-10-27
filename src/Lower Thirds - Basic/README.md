@@ -2,6 +2,8 @@
 
 This template supports a basic Title/Subtitle lower third that animates sliding in/out from the left.
 
+Uses basic CSS3 animations and a minimal amount of JS to handle play/stop/update hooks.
+
 Template Data supported:
 
 
