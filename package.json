@@ -1,0 +1,36 @@
+{
+  "name": "casparcg-html-templates",
+  "version": "1.0.0",
+  "description": "A collection of CasparCG HTML templates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foxworth42/casparcg-html-templates.git"
+  },
+  "keywords": [
+    "CasparCG"
+  ],
+  "author": "Ed Walker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/foxworth42/casparcg-html-templates/issues"
+  },
+  "homepage": "https://github.com/foxworth42/casparcg-html-templates#readme",
+  "devDependencies": {
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2",
+    "sass": "^1.23.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{json,js,css,sass}": "prettier --write"
+  }
+}
