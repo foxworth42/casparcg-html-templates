@@ -6,14 +6,10 @@
   position: absolute;
   opacity: 0;
 }
+
 .wrapper {
   transform: skew(-45deg, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 9, 172, 1) 0%,
-    rgba(1, 189, 227, 1) 57%,
-    rgba(1, 189, 227, 1) 100%
-  );
+  background: linear-gradient(90deg, #0009ac 0%, #01bde3 57%, #01bde3 100%);
   padding: 1em 10em 1em 12em;
   text-align: right;
   min-width: 1000px;
@@ -22,6 +18,7 @@
   z-index: 5;
   bottom: 150px;
 }
+
 .wrapper2 {
   transform: skew(-45deg, 0);
   background: #0009ac;
@@ -31,6 +28,7 @@
   border: 5px solid #fff;
   bottom: 50px;
 }
+
 .text {
   transform: skew(45deg, 0);
   color: #fff;
@@ -40,6 +38,7 @@
   margin: 0;
   opacity: 0;
 }
+
 .wrapper2 .text {
   font-size: 3em;
 }
@@ -49,20 +48,24 @@
   animation-name: slideIn;
   animation-fill-mode: forwards;
 }
+
 .wrappers.slideIn .text {
   animation-duration: 0.5s;
   animation-delay: 0.75s;
   animation-name: fadeIn;
   animation-fill-mode: forwards;
 }
+
 .wrapper2.slideIn {
   animation-delay: 0.1s;
 }
+
 .slideOut {
   animation-duration: 1s;
   animation-name: slideOut;
   animation-fill-mode: forwards;
 }
+
 .slideOut .text {
   animation-duration: 0.5s;
   animation-name: fadeOut;
@@ -74,6 +77,7 @@
   animation-name: fadeOut;
   animation-fill-mode: forwards;
 }
+
 .fadeIn {
   animation-duration: 0.5s;
   animation-name: fadeIn;
@@ -100,7 +104,6 @@
     opacity: 1;
   }
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;

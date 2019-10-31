@@ -1,3 +1,6 @@
+.DS_Store
+
+src/**/*.css
 # Logs
 logs
 *.log

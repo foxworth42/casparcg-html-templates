@@ -4,21 +4,28 @@ var subtitle = document.querySelector("#subtitle");
 var subtitleWrapper = document.querySelector(".wrapper2");
 var wrappers = document.querySelectorAll(".wrappers");
 var templateData = {};
+var active = false;
 
 // eslint-disable-next-line no-unused-vars
 function play() {
-  wrappers.forEach(function(element) {
-    element.classList.remove("slideOut");
-    element.classList.add("slideIn");
-  });
+  if (active === false) {
+    wrappers.forEach(function(element) {
+      element.classList.remove("slideOut");
+      element.classList.add("slideIn");
+    });
+    active = true;
+  }
 }
 
 // eslint-disable-next-line no-unused-vars,no-redeclare
 function stop() {
-  wrappers.forEach(function(element) {
-    element.classList.remove("slideIn");
-    element.classList.add("slideOut");
-  });
+  if (active === true) {
+    wrappers.forEach(function(element) {
+      element.classList.remove("slideIn");
+      element.classList.add("slideOut");
+    });
+    active = false;
+  }
 }
 
 // eslint-disable-next-line no-unused-vars
