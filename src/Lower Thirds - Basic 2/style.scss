@@ -1,0 +1,178 @@
+@use "sass:color";
+
+@import "../../node_modules/animate.css/source/fading_entrances/fadeIn";
+@import "../../node_modules/animate.css/source/fading_entrances/fadeInLeft";
+@import "../../node_modules/animate.css/source/fading_exits/fadeOut";
+@import "../../node_modules/animate.css/source/fading_exits/fadeOutLeft";
+
+
+$titleTextColor: #fff;
+$titleFont: helvetica, arial, sans-serif;
+$titleBaseBgColor: #253894;
+$titleLineColor: #058ad1;
+
+$subtitleTextColor: #444;
+$subtitleFont: helvetica, arial, sans-serif;
+$subtitleBgColor1: #fff;
+$subtitleBgColor2: color.scale($subtitleBgColor1, $lightness: -20%);
+
+
+$borderColor: #eee;
+$shadowColor: rgba(0,0,0,0.5);
+
+
+body {
+    font-size: 30px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.outerWrapper {
+    position: relative;
+    margin: 77vh 0 0 3vw;
+    
+    .title,
+    .subtitle {
+        opacity: 0;
+    }
+    &.play {
+        .title,
+        .subtitle {
+            animation-name: fadeInLeft;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            .text {
+                animation-name: fadeIn;
+                animation-duration: 1s;
+                animation-fill-mode: both;
+                animation-delay: 0.5s;
+            }
+        }
+        .subtitle {
+            animation-delay: 0.1s;
+        }
+    }
+    &.stop {
+        .title,
+        .subtitle {
+            animation-name: fadeOutLeft;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            .text {
+                animation-name: fadeOut;
+                animation-duration: 1s;
+                animation-fill-mode: both;
+            }
+        }
+    }
+}
+
+.subtitle,
+.title {
+//    position: absolute;
+}
+
+.wrapper {
+    display: inline-block;
+    transform: skew(-20deg, 0);
+    box-shadow: 0.2em 0.2em 0.5em $shadowColor;
+
+    .text {
+        transform: skew(20deg, 0);
+        position: relative;
+        z-index: 1;
+        margin: 0;
+    }
+    
+    &.shadow {
+        z-index: -10;
+        visibility: hidden;
+        &::before {
+            box-shadow: 0.5em 0.5em 1em $shadowColor;
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+            visibility: visible;
+            background: transparent;
+        }
+    }
+}
+.titleWrapper,
+.subtitleWrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-color: $borderColor;
+    border-style: solid;
+    border-width: 0.2em 0.2em;
+}
+.titleWrapper {
+    position: absolute;
+    border-radius: 1em 1em 0 0;
+    padding: 0.7em 2em 0.7em 6em;
+    background: linear-gradient(to right,
+        color.scale($titleBaseBgColor, $lightness: -45%) 0%,
+        color.scale($titleBaseBgColor, $lightness: 5%) 100%);
+    min-width: 22em;
+    
+    &::before {
+        border-radius: 1em 1em 0 0;
+    }
+
+    .lowerBar {
+        height: 1.5em;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to right,
+            color.scale($titleBaseBgColor, $lightness: -20%) 0%,
+            color.scale($titleBaseBgColor, $lightness: -5%) 25%,
+            $titleBaseBgColor 100%);
+
+        .line {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80%;
+            height: 0.1em;
+            background: linear-gradient(to right,
+                rgba($titleLineColor, 0) 0%,
+                rgba($titleLineColor, 1) 35%,
+                rgba($titleLineColor, 1) 65%,
+                rgba($titleLineColor, 0) 100%);
+        }
+    }
+  
+    .text {
+        color: $titleTextColor;
+        font-weight: bold;
+        text-align: right;
+        font-size: 2em;
+        font-family: $titleFont;
+    }
+}
+
+.subtitleWrapper {
+    position: absolute;
+    top: 2em;
+    padding: 2.4em 4em 0.2em 0.5em;
+    margin-left: 2em;
+    background: linear-gradient(to bottom, $subtitleBgColor2 40%, #fff 41%);
+    min-width: 22em;
+    
+    .text {
+        color: $subtitleTextColor;
+        text-align: left;
+        font-size: 1em;
+        font-style: italic;
+        font-family: $subtitleFont;
+    }
+}

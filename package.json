@@ -7,7 +7,7 @@
     "build": "sass --no-source-map src",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/**/*.js",
-    "dev-css": "sass --no-source-map --watch src"
+    "dev-css": "sass --no-source-map --watch 'src/Lower Thirds - Basic 2/style.scss':'src/Lower Thirds - Basic 2/style.css'"
   },
   "repository": {
     "type": "git",
@@ -27,8 +27,8 @@
     "eslint": "^6.6.0",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
-    "prettier": "^1.18.2",
-    "sass": "^1.23.1"
+    "prettier": "^1.19.1",
+    "sass": "^1.23.3"
   },
   "husky": {
     "hooks": {
