@@ -7,7 +7,7 @@
     "build": "sass --no-source-map src",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/**/*.js",
-    "dev-css": "sass --no-source-map --watch 'src/Lower Thirds - Basic 2/style.scss':'src/Lower Thirds - Basic 2/style.css'"
+    "dev-css": "sass --no-source-map --watch src"
   },
   "repository": {
     "type": "git",

@@ -4,6 +4,8 @@
 @import "../../node_modules/animate.css/source/fading_entrances/fadeInLeft";
 @import "../../node_modules/animate.css/source/fading_exits/fadeOut";
 @import "../../node_modules/animate.css/source/fading_exits/fadeOutLeft";
+@import "../../node_modules/animate.css/source/zooming_exits/zoomOut";
+
 
 $titleTextColor: #fff;
 $titleFont: helvetica, arial, sans-serif;
@@ -33,10 +35,17 @@ body {
     margin: 77vh 0 0 3vw;
     
     .title,
-    .subtitle {
+    .subtitle,
+    .logo {
         opacity: 0;
     }
     &.play {
+        .logo {
+            animation-name: zoomIn;
+            animation-duration: 0.5s;
+            animation-fill-mode: both;
+            animation-delay: 0.5s;
+        }
         .title,
         .subtitle {
             animation-name: fadeInLeft;
@@ -54,6 +63,11 @@ body {
         }
     }
     &.stop {
+        .logo {
+            animation-name: zoomOut;
+            animation-duration: 0.5s;
+            animation-fill-mode: both;
+        }
         .title,
         .subtitle {
             animation-name: fadeOutLeft;
@@ -169,4 +183,26 @@ body {
         font-style: italic;
         font-family: $subtitleFont;
     }
+}
+
+.logo {
+    position: absolute;
+    width: 6em;
+    top: -2em;
+    left: -2em;
+    
+    img {
+        width: 100%;
+    }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
