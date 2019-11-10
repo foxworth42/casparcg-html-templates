@@ -3,7 +3,7 @@ var titleWrapper = document.querySelector(".titleWrapper");
 var subtitle = document.querySelector(".subtitleText");
 var subtitleWrapper = document.querySelector(".subtitleWrapper");
 var outerWrapper = document.querySelector(".outerWrapper");
-var logoImg = document.querySelector(".logo img");
+var logo = document.querySelector(".logo");
 var templateData = {};
 var active = false;
 
@@ -46,7 +46,7 @@ function update(newTemplateData) {
       }
     }
     if ("logo" in templateData) {
-      logoImg.src = templateData.logo;
+      logo.style.backgroundImage = "url(" + templateData.logo + ")";
     }
   } catch (e) {
     console.error("Error parsing template data: ");

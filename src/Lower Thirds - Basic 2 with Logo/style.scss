@@ -32,7 +32,7 @@ body {
 
 .outerWrapper {
     position: relative;
-    margin: 77vh 0 0 3vw;
+    margin: 77vh 0 0 5.5vw;
     
     .title,
     .subtitle,
@@ -187,13 +187,15 @@ body {
 
 .logo {
     position: absolute;
-    width: 6em;
+    height: 6em;
+    width: 8em;
     top: -2em;
     left: -2em;
+    background-image: url("logo.png");
+    background-position: center left;
+    background-size: contain;
+    background-repeat: no-repeat;
     
-    img {
-        width: 100%;
-    }
 }
 
 @keyframes zoomIn {
