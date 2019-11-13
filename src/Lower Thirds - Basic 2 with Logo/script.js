@@ -27,6 +27,9 @@ function stop() {
 
 // eslint-disable-next-line no-unused-vars
 function update(newTemplateData) {
+  if (typeof newTemplateData === "undefined") {
+    return;
+  }
   try {
     templateData = JSON.parse(newTemplateData);
     if ("title" in templateData) {
