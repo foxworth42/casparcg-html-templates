@@ -4,7 +4,7 @@ This template supports a basic Title/Subtitle lower third that animates sliding 
 
 Uses CSS3 animations from the [animate.css library](https://daneden.github.io/animate.css/) and a minimal amount of JS to handle play/stop/update hooks.
 
-Colors can be customized in the srouce style.scss file.
+Colors can be customized in the source style.scss file.
 
 Template Data supported:
 

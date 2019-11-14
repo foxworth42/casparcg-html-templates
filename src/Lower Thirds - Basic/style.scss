@@ -1,3 +1,6 @@
+body {
+    font-size: 10px;
+}
 * {
   box-sizing: border-box;
 }
@@ -10,22 +13,26 @@
 .wrapper {
   transform: skew(-45deg, 0);
   background: linear-gradient(90deg, #0009ac 0%, #01bde3 57%, #01bde3 100%);
-  padding: 1em 10em 1em 12em;
+  padding: 1em 10em 1em 20em;
   text-align: right;
-  min-width: 1000px;
-  border: 10px solid #fff;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  min-width: 500px;
+  border-style: solid;
+    border-color: #fff;
+    border-width: 0.7em 1em;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
   z-index: 5;
-  bottom: 150px;
+  bottom: 113px;
 }
 
 .wrapper2 {
   transform: skew(-45deg, 0);
   background: #0009ac;
-  padding: 2em 5em 1em 12em;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  padding: 2em 5em 1em 20em;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
   /*width: 1030px;*/
-  border: 5px solid #fff;
+  border-style: solid;
+    border-color: #fff;
+    border-width: 0.7em 1em;
   bottom: 50px;
 }
 
