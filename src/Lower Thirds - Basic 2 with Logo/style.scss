@@ -33,7 +33,13 @@ body {
 .outerWrapper {
     position: relative;
     margin: 77vh 0 0 5.5vw;
-    
+
+
+    .empty-field,
+    .empty-wrapper {
+        display: none;
+    }
+
     .title,
     .subtitle,
     .logo {
@@ -191,11 +197,10 @@ body {
     width: 8em;
     top: -2em;
     left: -2em;
-    background-image: url("logo.png");
-    background-position: center left;
-    background-size: contain;
-    background-repeat: no-repeat;
-    
+
+    img {
+        height: 100%;
+    }
 }
 
 @keyframes zoomIn {
