@@ -5,6 +5,11 @@ body {
   box-sizing: border-box;
 }
 
+.empty-field,
+.empty-wrapper {
+  display: none;
+}
+
 .wrappers {
   position: absolute;
   opacity: 0;

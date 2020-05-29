@@ -1,10 +1,7 @@
-var title = document.querySelector("#title");
-var titleWrapper = document.querySelector(".wrapper");
-var subtitle = document.querySelector("#subtitle");
-var subtitleWrapper = document.querySelector(".wrapper2");
+/*global TemplateHandler */
 var wrappers = document.querySelectorAll(".wrappers");
-var templateData = {};
 var active = false;
+var templateHandler = new TemplateHandler();
 
 // eslint-disable-next-line no-unused-vars
 function play() {
@@ -33,29 +30,8 @@ function update(newTemplateData) {
   if (typeof newTemplateData === "undefined") {
     return;
   }
-  try {
-    templateData = JSON.parse(newTemplateData);
-    if ("title" in templateData) {
-      title.innerHTML = templateData.title;
-      if (title.innerHTML.length === 0) {
-        titleWrapper.style.display = "none";
-      } else {
-        titleWrapper.style.display = "block";
-      }
-    }
-    if ("subtitle" in templateData) {
-      subtitle.innerHTML = templateData.subtitle;
-      if (subtitle.innerHTML.length === 0) {
-        subtitleWrapper.style.display = "none";
-      } else {
-        subtitleWrapper.style.display = "block";
-      }
-    }
-  } catch (e) {
-    console.error("Error parsing template data: ");
-    console.error(newTemplateData);
-    console.error(e);
-  }
+  var templateData = templateHandler.parseTemplateData(newTemplateData);
+  templateHandler.fillParameters(templateData, true);
 }
 
 // eslint-disable-next-line no-unused-vars

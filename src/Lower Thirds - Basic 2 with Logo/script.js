@@ -1,10 +1,6 @@
-var title = document.querySelector(".titleText");
-var titleWrapper = document.querySelector(".titleWrapper");
-var subtitle = document.querySelector(".subtitleText");
-var subtitleWrapper = document.querySelector(".subtitleWrapper");
+/*global TemplateHandler */
 var outerWrapper = document.querySelector(".outerWrapper");
-var logo = document.querySelector(".logo");
-var templateData = {};
+var templateHandler = new TemplateHandler();
 var active = false;
 
 // eslint-disable-next-line no-unused-vars
@@ -30,32 +26,8 @@ function update(newTemplateData) {
   if (typeof newTemplateData === "undefined") {
     return;
   }
-  try {
-    templateData = JSON.parse(newTemplateData);
-    if ("title" in templateData) {
-      title.innerHTML = templateData.title;
-      if (title.innerHTML.length === 0) {
-        titleWrapper.style.display = "none";
-      } else {
-        titleWrapper.style.display = "block";
-      }
-    }
-    if ("subtitle" in templateData) {
-      subtitle.innerHTML = templateData.subtitle;
-      if (subtitle.innerHTML.length === 0) {
-        subtitleWrapper.style.display = "none";
-      } else {
-        subtitleWrapper.style.display = "block";
-      }
-    }
-    if ("logo" in templateData) {
-      logo.style.backgroundImage = "url(" + templateData.logo + ")";
-    }
-  } catch (e) {
-    console.error("Error parsing template data: ");
-    console.error(newTemplateData);
-    console.error(e);
-  }
+  var templateData = templateHandler.parseTemplateData(newTemplateData);
+  templateHandler.fillParameters(templateData, true);
 }
 
 // eslint-disable-next-line no-unused-vars

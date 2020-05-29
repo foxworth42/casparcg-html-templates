@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "sass --no-source-map src",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "lint": "eslint src/**/*.js",
     "dev-css": "sass --no-source-map --watch src"
   },
@@ -16,6 +16,12 @@
   "keywords": [
     "CasparCG"
   ],
+  "files": [
+    "src/**/*.js",
+    "!src/**/*.spec.js",
+    "src/**/*.css",
+    "src/**/*.html"
+  ],
   "author": "Ed Walker",
   "license": "MIT",
   "bugs": {
@@ -23,27 +29,35 @@
   },
   "homepage": "https://github.com/foxworth42/casparcg-html-templates#readme",
   "devDependencies": {
-    "animate.css": "^3.7.2",
-    "eslint": "^6.8.0",
-    "husky": "^3.1.0",
-    "lint-staged": "^9.5.0",
-    "prettier": "^1.19.1",
-    "sass": "^1.26.3"
+    "animate.css": "^4.1.0",
+    "eslint": "^7.1.0",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "lint-staged": "^10.2.6",
+    "prettier": "^2.0.5",
+    "sass": "^1.26.7"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
+  "jest": {
+    "testMatch": [
+      "**/src/**/*.spec.js"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/__tests__/setup.js"
+    ],
+    "collectCoverage": true
+  },
   "lint-staged": {
     "*.{json,css,sass}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*.{js}": [
       "prettier --write",
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   }
 }

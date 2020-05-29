@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/foxworth42/casparcg-html-templates.svg?branch=master)](https://travis-ci.org/github/foxworth42/casparcg-html-templates)
+
 # CasparCG HTML Templates
 
 This repo is a collection of HTML based templates for use in the [CasparCG media playout system](https://www.casparcg.com/).
