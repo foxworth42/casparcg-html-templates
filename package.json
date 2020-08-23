@@ -30,12 +30,12 @@
   "homepage": "https://github.com/foxworth42/casparcg-html-templates#readme",
   "devDependencies": {
     "animate.css": "^4.1.0",
-    "eslint": "^7.1.0",
+    "eslint": "^7.7.0",
     "husky": "^4.2.5",
-    "jest": "^26.0.1",
-    "lint-staged": "^10.2.6",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
-    "sass": "^1.26.7"
+    "sass": "^1.26.10"
   },
   "husky": {
     "hooks": {

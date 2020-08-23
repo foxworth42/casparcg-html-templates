@@ -162,4 +162,20 @@ describe("Template parameter handler", () => {
 
         expect(document.querySelector("[data-param='logo']").src).toContain("logo2.png");
     });
+
+    it("Should gracefully handle not finding any elements", () => {
+        let markup = `
+            <div id="titleParent">
+                <div>Title</div>
+            </div>
+        `;
+        document.body.innerHTML = markup;
+
+        let testHandler = new TemplateHandler();
+        testHandler.fillParameters({
+            "title": ""
+        }, false);
+
+        expect(document.body.innerHTML).toBe(markup);
+    });
 });
