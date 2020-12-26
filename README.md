@@ -8,4 +8,19 @@ Templates here have been tested under [CasparCG 2.2.0](https://github.com/Caspar
 
 Most templates support at least some amount of customization by specifying template data inside the CasparCG client, but to work properly template data **must be sent as JSON** for the template to read the data correctly.
 
+----
+### Compiling Templates
+
+Requirements:
+- NodeJS
+
+To simplify doing style development locally the command `npm run dev-css` will monitor all SCSS files for changes and recompile styles. 
+
+Build styles: `npm run build`
+
+Lint JS files: `npm run lint`
+
+Test JS files: `npm run test`
+
+Precommit hooks are in place to enforce code linting and test running prior to commit.
 

@@ -29,17 +29,17 @@
   },
   "homepage": "https://github.com/foxworth42/casparcg-html-templates#readme",
   "devDependencies": {
-    "animate.css": "^4.1.0",
-    "eslint": "^7.7.0",
-    "husky": "^4.2.5",
-    "jest": "^26.4.2",
-    "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5",
-    "sass": "^1.26.10"
+    "animate.css": "^4.1.1",
+    "eslint": "^7.16.0",
+    "husky": "^4.3.6",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "sass": "^1.30.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && jest"
     }
   },
   "jest": {
