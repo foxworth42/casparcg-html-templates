@@ -7,7 +7,8 @@
     "build": "sass --no-source-map src",
     "test": "jest",
     "lint": "eslint src/**/*.js",
-    "dev-css": "sass --no-source-map --watch src"
+    "dev-css": "sass --no-source-map --watch src",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -31,16 +32,11 @@
   "devDependencies": {
     "animate.css": "^4.1.1",
     "eslint": "^7.16.0",
-    "husky": "^4.3.6",
-    "jest": "^26.6.3",
-    "lint-staged": "^10.5.3",
+    "husky": "^7.0.0",
+    "jest": "^27.2.0",
+    "lint-staged": "^11.1.0",
     "prettier": "^2.2.1",
     "sass": "^1.30.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && jest"
-    }
   },
   "jest": {
     "testMatch": [
